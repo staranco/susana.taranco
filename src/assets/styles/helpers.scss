@@ -1,0 +1,104 @@
+$appColors: (
+  coral: #FF4C35,
+  gainsboro: #DCDCDC,
+  lightgray: #D3D3D3,
+  silver: #C0C0C0,
+  black: #000000,
+  white: #FFFFFF,
+);
+
+@each $value in $appColors {
+  .color-#{nth($value, 1)} { color: nth($value, 2); }
+
+  .bg-#{nth($value, 1)} { background-color: nth($value, 2); }
+
+  .fill-#{nth($value, 1)} { fill: nth($value, 2); }
+}
+
+/* displays */
+.display-flex { display: flex; }
+.display-block { display: block; }
+.display-inline { display: inline; }
+.display-inline-block { display: inline-block; }
+.display-none { display: none; }
+
+.flex-stretch { flex: 1; }
+.flex-wrap { flex-wrap: wrap; }
+.jc-space-between { justify-content: space-between; }
+.jc-center { justify-content: center; }
+.ai-center { align-items: center; }
+
+/* floats */
+.float-left { float: left; }
+.float-right { float: right; }
+
+/* position */
+.position-absolute { position: absolute; }
+.position-relative { position: relative; }
+.position-fixed { position: fixed; }
+
+/* blend mode */
+.mix-blend-normal {  mix-blend-mode: normal; }
+.mix-blend-multiply {  mix-blend-mode: multiply; }
+
+/* cursor */
+.no-pointer-events { pointer-events: none; }
+.cursor-pointer { cursor: pointer; }
+
+/* text */
+.tt-uppercase { text-transform: uppercase; }
+
+.ta-center { text-align: center; }
+.ta-right { text-align: right; }
+
+.fs-32 { @include font-size(32px); }
+.fs-24 { @include font-size(24px); }
+.fs-18 { @include font-size(18px); }
+.fs-16 { @include font-size(16px); }
+.fs-14 { @include font-size(14px); }
+.fs-10 { @include font-size(10px); }
+.fs-8 { @include font-size(8px); }
+
+.fw-600 { font-weight: 600; }
+.fw-400 { font-weight: 400; }
+
+/* margins and paddings */
+$spaceamounts: (-80, -72, -64, -56, -48, -40, -32, -24, -16, -8, -4, 0, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80);
+$sides: (top, bottom, left, right);
+
+@each $space in $spaceamounts {
+  .m-#{$space} { margin: #{$space}px; }
+
+  @if ($space >= 0) {
+    .p-#{$space} { padding: #{$space}px; }
+  }
+}
+
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .m#{str-slice($side, 0, 1)}-#{$space} { margin-#{$side}: #{$space}px !important; }
+
+        @if ($space >= 0) {
+        .p#{str-slice($side, 0, 1)}-#{$space} { padding-#{$side}: #{$space}px; }
+        }
+    }
+}
+
+/* negative classes :( */
+.no-border { border: none; }
+.no-background { background: none; }
+.no-text-transform { text-transform: none; }
+.no-list-style { list-style: none; }
+
+/* object fit */
+.of-cover { object-fit: cover; }
+
+/* opacity */
+.transparent { opacity: 0; }
+
+/* widths */
+.w-100 { width: 100%; } 
+
+/* media sizes */
+.mob-h { @include screen(tablet-down) { display: none; } }
+.mob-block { @include screen(tablet-down) { display: block; } }

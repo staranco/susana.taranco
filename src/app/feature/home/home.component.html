@@ -1,0 +1,74 @@
+<article>
+  <section data-id="intro">
+    <div class="tt-uppercase fs-18">
+      <span class="color-silver">
+        A website is <br>
+        - or should be -  <br>
+        more like music  <br>
+        than like just a screen. 
+      </span>
+        <br><br>
+        It should bring up moods and feelings. <br>
+        Content, words, images, code...<br>
+        all that comes later.
+    </div>
+  </section>
+
+  <section id="featured-image" data-id="featured-image" data-speed="1.2">
+      <img 
+      srcset="../assets/images/sts-once-i-was-a-child@0.5x.webp 320w, ../assets/images/sts-once-i-was-a-child@00x.webp 480w, ../assets/images/sts-once-i-was-a-child@2x.webp 800w" 
+      sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px" 
+      src="../assets/images/sts-once-i-was-a-child@00x.webp" 
+      alt="Susana Taranco as a child" 
+      class="of-cover">
+  </section>
+
+  <section data-id="details" class="position-relative">
+    <div class="tt-uppercase fs-18">
+      <span>
+        Unique experiences 
+        that combine innovative 
+        design and code 
+        (on all screens)
+      </span>
+      <br><br>
+      <a class="tt-uppercase color-coral fs-18 cursor-pointer">Discover more</a>
+    </div>
+  </section>
+
+  <section data-id="latest" class="display-flex jc-space-between flex-wrap">
+    <div class="tt-uppercase fs-18 mb-80 display-block w-100">Latest</div>
+    <div class="latest__block display-flex ai-center jc-center bg-black" (mouseover)="p1Visible=true" (mouseleave)="p1Visible=false" [ngClass]="p1Visible == true ? 'cursor-pointer' : '' "  data-speed="-1.5">
+      <div class="position-absolute tt-uppercase color-white ta-center">Nederlia redesign<br><span>concept</span></div>
+      <img 
+      srcset="../assets/images/sts-project-nederlia@0.5x.webp 320w, ../assets/images/sts-project-nederlia@00x.webp 480w, ../assets/images/sts-project-nederlia@2x.webp 800w" 
+      sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px" 
+      src="../assets/images/sts-project-nederlia@00x.webp" 
+      alt="Susana Taranco project Nederlia redesign" 
+      class="position-relative of-cover" [ngClass]="p1Visible == true ? 'transparent' : '' ">
+    </div>
+    <div class="latest__block display-flex ai-center jc-center bg-black" (mouseover)="p2Visible=true" (mouseleave)="p2Visible=false" [ngClass]="p2Visible == true ? 'cursor-pointer' : '' "  data-speed="1">
+      <div class="position-absolute tt-uppercase color-white ta-center">Studio design<br><span>concept</span></div>
+      <img 
+      srcset="../assets/images/sts-project-studio@0.5x.webp 320w, ../assets/images/sts-project-studio@00x.webp 480w, ../assets/images/sts-project-studio@2x.webp 800w" 
+      sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px" 
+      src="../assets/images/sts-project-studio@00x.webp" 
+      alt="Susana Taranco project Nederlia redesign" 
+      class="position-relative of-cover" [ngClass]="p2Visible == true ? 'transparent' : '' ">
+    </div>
+  </section>
+  <footer data-id="footer" class="pt-24 pb-80 mb-80">
+    <div class="layout-wrapper display-flex jc-space-between mob-block">
+      <div class="display-flex ai-center jc-space-between">
+        <div class="fs-32">©2019</div>
+        
+        <div class="fs-10 ml-24">Would you like to discuss a new project? <a class="footer__chatLink">please get in touch 😊</a>.<br>This site uses <a href="/">cookies</a></div>
+      </div>
+      <div class="fs-32 ta-right">
+        <a href="https://www.instagram.com" target="_blank" class="mr-16">IG</a>
+        <a href="https://twitter.com" target="_blank" class="mr-16">TW</a>
+        <a href="https://linkedin.com" target="_blank">IN</a>
+      </div>
+    </div>
+  </footer>
+</article>

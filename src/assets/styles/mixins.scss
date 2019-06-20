@@ -1,0 +1,58 @@
+@function str-split($string, $separator) {
+  $split-arr: ();
+  $index : str-index($string, $separator);
+
+  @while $index != null {
+    $item: str-slice($string, 1, $index - 1);
+    $split-arr: append($split-arr, $item);
+    $string: str-slice($string, $index + 1);
+    $index : str-index($string, $separator);
+  }
+
+  $split-arr: append($split-arr, $string);
+  @return $split-arr;
+}
+
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+/* font sizes */
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+// Media Queries
+@mixin screen($size) {
+  $size-split: str-split($size, "-");
+
+  @if length($size-split) == 2 {
+    @if map-has-key($breakpoints, nth($size-split, 1)) {
+      @if nth($size-split, 2) == "up" {
+        @media only screen and (min-width: #{map-deep-get($breakpoints, nth($size-split, 1), "min")}) {
+          @content;
+        }
+
+      } @else if nth($size-split, 2) == "down" {
+        @media only screen and (max-width: #{map-deep-get($breakpoints, nth($size-split, 1), "max")}) {
+          @content;
+        }
+
+      } @else if nth($size-split, 2) == "only" {
+        @media only screen and (min-width: #{map-deep-get($breakpoints, nth($size-split, 1), "min")}) and (max-width: #{map-deep-get($breakpoints, nth($size-split, 1), "max")}) {
+          @content;
+        }
+      }
+    }
+  }
+}

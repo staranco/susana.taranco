@@ -1,0 +1,25 @@
+$sFont: Roboto, Arial, sans-serif;
+$sPageBackground: #FFFFFF;
+$sTextColor: #2E2E2E;
+
+$breakpoints: (
+  phone: (
+    min: 0em,
+    max: 29.9999em
+  ),
+  phablet: (
+    min: 30em,
+    max: 47.9999em
+  ),
+  tablet: (
+    min: 48em,
+    max: 47.9999em
+  ),
+  desktop: (
+    min: 62em,
+    max: 79.9999em
+  ),
+  widescreen: (
+    min: 80em
+  )
+);

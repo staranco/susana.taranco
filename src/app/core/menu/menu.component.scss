@@ -1,0 +1,17 @@
+[data-id="menu-text"]{
+    z-index: 80;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+[data-id="menu-box"]{
+    z-index: 70;
+    top: 0;
+
+    & [role="button"] {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+}

@@ -1,0 +1,13 @@
+[data-id="logo"] {
+    left: 8vw;
+    top: 8vw;
+    line-height: 1.5;
+    z-index: 90;
+    position: fixed;
+}
+
+@media (max-width: 767px) {
+    [data-id="logo"]{
+        position: relative;
+    }
+}

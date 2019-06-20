@@ -1,0 +1,19 @@
+<nav data-id="menu-box" class="position-fixed bg-coral p-72 w-100" *ngIf="visible" [@slideInOut]>
+  <div class="display-flex jc-space-between ai-center">
+    <ul class="no-list-style p-0 m-0 display-flex">
+      <li class="p-16"><a routerLink="/" (click)="visible = !visible">Home</a></li>
+      <li class="p-16"><a routerLink="/works" (click)="visible = !visible">Work</a></li>
+      <li class="p-16">About</li>
+    </ul>
+
+    <div>
+      <a href="tel:+34667641024" class="p-16">+34 667 641 024</a>
+      <a href="mailto:tarancosusana@gmail.com" class="p-16">tarancosusana@gmail.com</a>
+      <a href="https://goo.gl/maps/LY5rwftMv7jD8shz7" target="_blank" class="p-16">Calle de Argumosa, 7, 28012 Madrid</a>
+    </div>
+
+    <div class="position-absolute uppercase block ta-center cursor-pointer p-8" tabindex="0" role="button" aria-pressed="false" (click)="visible = !visible">close</div>
+  </div>
+</nav>
+
+<a data-id="menu-text" class="tt-uppercase color-coral position-fixed fs-18 cursor-pointer" (click)="visible = !visible">Menu</a>
